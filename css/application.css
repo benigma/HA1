@@ -1,0 +1,166 @@
+/* Colours */
+/* Fonts */
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+h1 {
+  font-family: "Rockwell W01", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 3em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+p {
+  font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 16px; }
+  .home-container header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/white-border-bottom.png") bottom left no-repeat, url("../img/home-page-banner.jpg") top center no-repeat;
+    background-size: 100%, cover;
+    height: 600px;
+    max-height: 600px;
+    grid-column: 1/13;
+    text-align: center; }
+    .home-container header h1, .home-container header p {
+      color: #FFF;
+      max-width: 50%;
+      margin: 8px auto; }
+    .home-container header p {
+      line-height: 1.75;
+      font-size: 15px; }
+    .home-container header nav {
+      width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 16px;
+      grid-column: 2 / span 12;
+      align-items: center;
+      top: 32px;
+      position: absolute; }
+      .home-container header nav .logo {
+        width: 200px;
+        height: auto;
+        grid-column: 2/4; }
+      .home-container header nav ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        grid-column: 4/12; }
+        .home-container header nav ul li {
+          width: auto;
+          margin: 0px 16px;
+          text-align: right; }
+        .home-container header nav ul li:last-child {
+          margin: 0px 0px 0px 16px; }
+        .home-container header nav ul li a {
+          color: #FFF;
+          font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
+          font-size: 14px;
+          font-weight: normal;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: all 0.25s ease-in-out; }
+          .home-container header nav ul li a:hover {
+            color: #cccccc;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+
+.story-intro {
+  grid-column: 1/13;
+  padding: 32px 0; }
+  .story-intro p {
+    font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+    text-align: center;
+    color: #6a6a6a;
+    max-width: 70%;
+    margin: 0 auto; }
+
+.story-container {
+  grid-column: 2/12;
+  display: grid;
+  grid-gap: 0px;
+  padding: 32px 0px; }
+  .story-container .story {
+    text-align: center;
+    border-right: 1px dashed #cccccc;
+    background: #FFF;
+    transition: background 0.25s ease-in; }
+    .story-container .story .feature {
+      order: 1;
+      padding: 16px 0px; }
+    .story-container .story .feature img {
+      width: auto;
+      height: auto;
+      max-height: 200px; }
+    .story-container .story article {
+      order: 2;
+      margin: 0px auto;
+      grid-column: 7/12;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 24px; }
+      .story-container .story article h1 {
+        color: #6a6a6a;
+        font-size: 21px;
+        line-height: 1;
+        padding-bottom: 8px; }
+      .story-container .story article p {
+        line-height: 1.5;
+        font-size: 12px; }
+    .story-container .story:nth-child(1) {
+      grid-column: 1/3; }
+    .story-container .story:nth-child(2) {
+      grid-column: 4/6; }
+    .story-container .story:nth-child(3) {
+      grid-column: 7/9; }
+    .story-container .story:nth-child(4) {
+      grid-column: 10/12;
+      border-right: none; }
+    .story-container .story:hover {
+      background: rgba(0, 0, 0, 0.025);
+      cursor: pointer; }
+
+footer {
+  width: 100%;
+  max-height: 100px;
+  background: #0055a5;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+  padding: 8px 0px;
+  grid-column: 1/13;
+  align-items: center; }
+  footer p {
+    color: #FFF;
+    font-size: .75em;
+    line-height: 1.5; }
+  footer .copyright {
+    grid-column: 2/8; }
+  footer .social {
+    grid-column: 9/12;
+    display: flex;
+    justify-content: flex-end; }
+    footer .social img {
+      margin-left: 32px; }
+
+/*# sourceMappingURL=application.css.map */

@@ -1,0 +1,194 @@
+.home-container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 16px;
+
+    & header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/home-page-banner.jpg') top center no-repeat;
+        background-size: 100%, cover;
+        height: 600px;
+        max-height: 600px;
+        grid-column: 1/13;
+        text-align: center;
+
+        & h1, & p {
+            color: #FFF;
+            max-width: 50%;
+            margin: 8px auto;
+        }
+        & p {
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        & nav {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 16px;
+            grid-column: 2 / span 12;
+            align-items: center;
+            top: 32px;
+            position: absolute;
+    
+            & .logo {
+                width: 200px;
+                height: auto;
+                grid-column: 2/4;
+            }
+    
+            & ul {
+                display: flex;
+                justify-content: flex-end;
+                list-style: none;
+                margin: 0;
+                grid-column: 4/12;
+    
+                & li {
+                    width: auto;
+                    margin: 0px 16px;
+                    text-align: right;
+                }
+    
+                & li:last-child {
+                    margin: 0px 0px 0px 16px;
+                }
+    
+                & li a {
+                    color: #FFF;
+                    font-family: $paragraph-font;
+                    font-size: 14px;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    transition: all 0.25s ease-in-out;
+    
+                    &:hover {
+                        color: $light-grey;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.story-intro {
+    grid-column: 1/13;
+    padding: 32px 0;
+
+    & p {
+        font-family: $paragraph-font;
+        font-size: 18px;
+        line-height: 1.25;
+        text-align: center;
+        color: $grey;
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.story-container {
+
+    grid-column: 2/12;
+    display: grid;
+    grid-gap: 0px;
+    padding: 32px 0px;
+
+    .story {
+
+        text-align: center;
+        border-right: 1px dashed $light-grey;
+        background: #FFF;
+        transition: background 0.25s ease-in;
+
+        & .feature {
+            order: 1;
+            padding: 16px 0px;
+        }
+
+        & .feature img {
+            width: auto;
+            height: auto;
+            max-height: 200px;
+        }
+
+        & article {
+            order: 2;
+            margin: 0px auto;
+            grid-column: 7/12;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 16px 24px;
+
+            & h1 {
+                color: $grey;
+                font-size: 21px;
+                line-height: 1;
+                padding-bottom: 8px;
+            }
+            & p {
+                line-height: 1.5;
+                font-size: 12px;
+            }
+        }
+        &:nth-child(1) {
+            grid-column: 1/3;
+        } 
+        &:nth-child(2) {
+            grid-column: 4/6;
+        } 
+        &:nth-child(3) {
+            grid-column: 7/9;
+        }
+        &:nth-child(4) {
+            grid-column: 10/12;
+            border-right: none;
+        }
+        &:hover {
+            background: rgba(0,0,0,0.025);
+            cursor: pointer;
+        }
+    }
+
+}
+
+footer {
+    width: 100%;
+    max-height: 100px;
+    background: $blue;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 16px;
+    padding: 8px 0px;
+    grid-column: 1/13;
+    align-items: center;
+
+    & p {
+        color: #FFF;
+        font-size: .75em;
+        line-height: 1.5;
+    }
+    & .copyright {
+        grid-column: 2/8;
+    }
+    & .social {
+        grid-column: 9/12;
+        display: flex;
+        justify-content: flex-end;
+
+        & img {
+            margin-left: 32px;
+        }
+    }
+}
