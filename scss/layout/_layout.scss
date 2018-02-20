@@ -12,12 +12,32 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/home-page-banner.jpg') top center no-repeat;
-        background-size: 100%, cover;
+        background-color: $blue;
         height: 600px;
         max-height: 600px;
         grid-column: 1/13;
         text-align: center;
+
+        &.home {
+            background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/home-page-banner.jpg') top center no-repeat;
+            background-size: 100%, cover;
+        }
+        &.about {
+            background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/about-page-banner.jpg') top center no-repeat;
+            background-size: 100%, cover;
+        }
+        &.marketing {
+            background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/marketing-page-banner.jpg') top center no-repeat;
+            background-size: 100%, cover;
+        }
+        &.crime {
+            background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/crime-page-banner.jpg') top center no-repeat;
+            background-size: 100%, cover;
+        }
+        &.operations {
+            background:  url('../img/white-border-bottom.png') bottom left no-repeat, url('../img/phone-page-banner.jpg') top center no-repeat;
+            background-size: 100%, cover;
+        }
 
         & h1, & p {
             color: #FFF;
@@ -45,8 +65,16 @@
                 height: auto;
                 grid-column: 2/4;
             }
-    
-            & ul {
+
+            & #mobile-primary-menu {
+                display: none;
+            }
+
+            & .mobile-menu-icon {
+                display: none;
+            }
+
+            & ul#menu-primary-menu {
                 display: flex;
                 justify-content: flex-end;
                 list-style: none;
@@ -84,17 +112,27 @@
 
 .story-intro {
     grid-column: 1/13;
-    padding: 32px 0;
+    padding-top: 0px;
 
     & p {
         font-family: $paragraph-font;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.25;
+        color: #000;
+        text-align: center;
+        width: 70%;
+        margin: 16px auto;
+    }
+
+    & p:first-of-type {
         font-size: 18px;
         font-weight: 400;
-        line-height: 1.25;
-        text-align: center;
+        margin-bottom: 24px;
         color: $grey;
-        width: 70%;
-        margin: 0 auto;
+    }
+    & p:last-of-type {
+        margin-bottom: 24px;
     }
 }
 
@@ -105,6 +143,47 @@
     grid-template-columns: repeat(4, 25%);
     grid-gap: 0px;
     padding: 32px 0px;
+
+    &.operations {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        & .story {
+            width: 33%;
+            border-right: none;
+        }
+    }
+
+    &.about {
+        grid-template-columns: repeat(2, 50%);
+
+        & .story {
+            display: grid;
+            width: 100%;
+            border-right: none;
+            grid-column: 1/4;
+
+            & .feature {
+                grid-column: 1;
+                & img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 400px;
+                }
+            }
+            & article {
+                width: auto;
+                grid-column: 2;
+            }
+
+            &:hover {
+                & > .feature img {
+                    animation: none;
+                }
+            }
+        }
+    }
 
     .story {
 
@@ -121,8 +200,7 @@
 
         & .feature img {
             width: 100px;
-            height: auto;
-            max-height: 200px;
+            height: 200px;
         }
 
         & article {
@@ -139,6 +217,11 @@
                 font-size: 21px;
                 line-height: 1;
                 padding-bottom: 8px;
+
+                & a {
+                    color: $blue;
+                    text-decoration: none;
+                }
             }
             & p {
                 line-height: 1.5;
@@ -150,8 +233,6 @@
             border-right: none;
         }
         &:hover {
-            background: rgba(0,0,0,0.025);
-            cursor: pointer;
             & > .feature img {
                 animation: pulse 2s ease-in-out infinite;
             }
@@ -203,6 +284,15 @@ footer {
     }
 }
 
+@keyframes menu {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: -32px;
+    }
+}
+
 /* iPhone 6 */
 @media only screen and (max-width: 475px) {
 
@@ -223,13 +313,87 @@ footer {
             & h1, & p {
                 width: 80%;
             }
-            & nav .logo {
-                grid-column: 4/10;
-                text-align: center;
-                width: auto;
+            & nav {
+                grid-column: 2/12;
+
+                & .logo {
+                    grid-column: 2/8;
+                    text-align: center;
+                    width: auto;
+                }
             }
-            & nav ul {
+            
+            & .mobile-menu-icon {
+                grid-column: 11;
+                width: 30px;
+                height: 30px;
+                display: block;
+                background: url('../img/svg/001-menu.svg') no-repeat center;
+                -webkit-filter: invert(100%);
+                justify-content: center;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            & nav ul#menu-primary-menu {
                 display: none;
+            }
+
+            & nav .mobile-menu-icon {
+                display: block;
+            }
+
+            & nav ul#mobile-primary-menu {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                width: 100%;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                background: $blue;
+                position: absolute;
+                overflow: hidden;
+
+                &.mobile-menu {
+                    top: calc(-100vh - 32px);
+
+                    &.is-open {
+                        animation: menu 0.375s ease-in forwards;
+                        top: 0px;
+                        position: fixed;
+
+                        & .close-btn {
+                            width: 24px;
+                            height: 24px;
+                            background: url('../img/svg/002-close.svg') no-repeat center;
+                            -webkit-filter: invert(100%);
+                            position: absolute;
+                            top: 90px;
+                            right: 40px;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        & li {
+                            list-style: none;
+                            padding: 8px 0px;
+                            width: 100%;
+        
+                            & a {
+                                font-family: $paragraph-font;
+                                font-size: 15px;
+                                color: #FFF;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -242,6 +406,17 @@ footer {
         }
     }
     .story-container {
+
+        &.operations {
+            & .story {
+                width: 100%;
+                
+                &:nth-child(4) {
+                    padding-bottom: 32px;
+                }
+            }
+        }
+
         .story {
             border-right: none;
             display: flex;
