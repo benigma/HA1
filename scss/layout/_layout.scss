@@ -21,7 +21,7 @@
 
         & h1, & p {
             color: #FFF;
-            max-width: 50%;
+            width: 50%;
             margin: 8px auto;
         }
         & p {
@@ -89,10 +89,11 @@
     & p {
         font-family: $paragraph-font;
         font-size: 18px;
+        font-weight: 400;
         line-height: 1.25;
         text-align: center;
         color: $grey;
-        max-width: 70%;
+        width: 70%;
         margin: 0 auto;
     }
 }
@@ -101,6 +102,7 @@
 
     grid-column: 2/12;
     display: grid;
+    grid-template-columns: repeat(4, 25%);
     grid-gap: 0px;
     padding: 32px 0px;
 
@@ -110,6 +112,7 @@
         border-right: 1px dashed $light-grey;
         background: #FFF;
         transition: background 0.25s ease-in;
+        width: 100%;
 
         & .feature {
             order: 1;
@@ -117,7 +120,7 @@
         }
 
         & .feature img {
-            width: auto;
+            width: 100px;
             height: auto;
             max-height: 200px;
         }
@@ -140,24 +143,18 @@
             & p {
                 line-height: 1.5;
                 font-size: 12px;
+                font-weight: 400;
             }
         }
-        &:nth-child(1) {
-            grid-column: 1/3;
-        } 
-        &:nth-child(2) {
-            grid-column: 4/6;
-        } 
-        &:nth-child(3) {
-            grid-column: 7/9;
-        }
         &:nth-child(4) {
-            grid-column: 10/12;
             border-right: none;
         }
         &:hover {
             background: rgba(0,0,0,0.025);
             cursor: pointer;
+            & > .feature img {
+                animation: pulse 2s ease-in-out infinite;
+            }
         }
     }
 
@@ -191,4 +188,132 @@ footer {
             margin-left: 32px;
         }
     }
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.75);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* iPhone 6 */
+@media only screen and (max-width: 475px) {
+
+    .home-container {
+
+        & header {
+
+            max-height: 450px;
+
+            & h1 {
+                font-size: 24px;
+                line-height: 1;
+                margin-top: 32px;
+            }
+            & p {
+                font-size: 12px;
+            }
+            & h1, & p {
+                width: 80%;
+            }
+            & nav .logo {
+                grid-column: 4/10;
+                text-align: center;
+                width: auto;
+            }
+            & nav ul {
+                display: none;
+            }
+        }
+    }
+    .story-intro {
+        padding: 16px 0px 0px;
+
+        & p {
+            font-size: 14px;
+            width: 80%;
+        }
+    }
+    .story-container {
+        .story {
+            border-right: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding-bottom: 32px;
+
+            & .feature {
+                flex: 1;
+                justify-content: center;
+                padding: 0px;
+
+                & p {
+                    font-weight: 300;
+                }
+                & img {
+                    max-width: 100%;
+                    width: auto;
+                }
+            }
+            & article {
+                flex: 3;
+                text-align: left;
+                padding: 0px 0px 0px 16px;
+
+                & h1 {
+                    font-size: 18px;
+                    padding-bottom: 0px;
+                }
+                & p {
+                    font-size: 11px;
+                }
+            }
+
+            &:nth-child(odd) {
+                grid-column: 1/13;
+            } 
+            &:nth-child(even) {
+                grid-column: 1/13;
+            }
+            &:nth-child(4) {
+                grid-column: 1/13;
+                padding-bottom: 0px;
+            }
+            &:hover {
+                background: none;
+                cursor: default;
+            }
+        }
+    }
+
+    footer {
+
+        max-height: none;
+        padding: 24px 0px 8px;
+
+        & .copyright {
+            grid-column: 2/12;
+            text-align: center;
+
+            & p:first-of-type {
+                margin-bottom: 16px;
+            }
+        }
+        & .social {
+            grid-column: 2/12;
+            justify-content: center;
+
+            & img {
+                margin-left: 0px;
+            }
+        }
+    }
+
 }

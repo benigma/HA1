@@ -10,13 +10,13 @@ h1 {
   font-size: 3em;
   line-height: 1.5;
   margin-bottom: 8px;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase; }
 
 p {
   font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
   font-size: 16px;
-  font-weight: 400; }
+  font-weight: 300; }
 
 .home-container {
   width: 100%;
@@ -39,7 +39,7 @@ p {
     text-align: center; }
     .home-container header h1, .home-container header p {
       color: #FFF;
-      max-width: 50%;
+      width: 50%;
       margin: 8px auto; }
     .home-container header p {
       line-height: 1.75;
@@ -88,27 +88,30 @@ p {
   .story-intro p {
     font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
     font-size: 18px;
+    font-weight: 400;
     line-height: 1.25;
     text-align: center;
     color: #6a6a6a;
-    max-width: 70%;
+    width: 70%;
     margin: 0 auto; }
 
 .story-container {
   grid-column: 2/12;
   display: grid;
+  grid-template-columns: repeat(4, 25%);
   grid-gap: 0px;
   padding: 32px 0px; }
   .story-container .story {
     text-align: center;
     border-right: 1px dashed #cccccc;
     background: #FFF;
-    transition: background 0.25s ease-in; }
+    transition: background 0.25s ease-in;
+    width: 100%; }
     .story-container .story .feature {
       order: 1;
       padding: 16px 0px; }
     .story-container .story .feature img {
-      width: auto;
+      width: 100px;
       height: auto;
       max-height: 200px; }
     .story-container .story article {
@@ -126,19 +129,15 @@ p {
         padding-bottom: 8px; }
       .story-container .story article p {
         line-height: 1.5;
-        font-size: 12px; }
-    .story-container .story:nth-child(1) {
-      grid-column: 1/3; }
-    .story-container .story:nth-child(2) {
-      grid-column: 4/6; }
-    .story-container .story:nth-child(3) {
-      grid-column: 7/9; }
+        font-size: 12px;
+        font-weight: 400; }
     .story-container .story:nth-child(4) {
-      grid-column: 10/12;
       border-right: none; }
     .story-container .story:hover {
       background: rgba(0, 0, 0, 0.025);
       cursor: pointer; }
+      .story-container .story:hover > .feature img {
+        animation: pulse 2s ease-in-out infinite; }
 
 footer {
   width: 100%;
@@ -162,5 +161,87 @@ footer {
     justify-content: flex-end; }
     footer .social img {
       margin-left: 32px; }
+
+/* Keyframe Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.75); }
+  100% {
+    transform: scale(1); } }
+/* iPhone 6 */
+@media only screen and (max-width: 475px) {
+  .home-container header {
+    max-height: 450px; }
+    .home-container header h1 {
+      font-size: 24px;
+      line-height: 1;
+      margin-top: 32px; }
+    .home-container header p {
+      font-size: 12px; }
+    .home-container header h1, .home-container header p {
+      width: 80%; }
+    .home-container header nav .logo {
+      grid-column: 4/10;
+      text-align: center;
+      width: auto; }
+    .home-container header nav ul {
+      display: none; }
+
+  .story-intro {
+    padding: 16px 0px 0px; }
+    .story-intro p {
+      font-size: 14px;
+      width: 80%; }
+
+  .story-container .story {
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 32px; }
+    .story-container .story .feature {
+      flex: 1;
+      justify-content: center;
+      padding: 0px; }
+      .story-container .story .feature p {
+        font-weight: 300; }
+      .story-container .story .feature img {
+        max-width: 100%;
+        width: auto; }
+    .story-container .story article {
+      flex: 3;
+      text-align: left;
+      padding: 0px 0px 0px 16px; }
+      .story-container .story article h1 {
+        font-size: 18px;
+        padding-bottom: 0px; }
+      .story-container .story article p {
+        font-size: 11px; }
+    .story-container .story:nth-child(odd) {
+      grid-column: 1/13; }
+    .story-container .story:nth-child(even) {
+      grid-column: 1/13; }
+    .story-container .story:nth-child(4) {
+      grid-column: 1/13;
+      padding-bottom: 0px; }
+    .story-container .story:hover {
+      background: none;
+      cursor: default; }
+
+  footer {
+    max-height: none;
+    padding: 24px 0px 8px; }
+    footer .copyright {
+      grid-column: 2/12;
+      text-align: center; }
+      footer .copyright p:first-of-type {
+        margin-bottom: 16px; }
+    footer .social {
+      grid-column: 2/12;
+      justify-content: center; }
+      footer .social img {
+        margin-left: 0px; } }
 
 /*# sourceMappingURL=application.css.map */
