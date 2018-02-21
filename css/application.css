@@ -162,7 +162,7 @@ p {
       padding: 16px 0px; }
     .story-container .story .feature img {
       width: 100px;
-      height: 200px; }
+      height: auto; }
     .story-container .story article {
       order: 2;
       margin: 0px auto;
