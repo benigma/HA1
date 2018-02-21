@@ -11,8 +11,60 @@ h1 {
     font-weight: 300;
     text-transform: uppercase;
 }
+h3 {
+    font-family: $heading-font;
+    font-size: 1em;
+    color: $grey;
+    line-height: 1;
+    margin: 24px 0px 0px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+p:first-of-type {
+    margin: 0px 0px 0px;
+}
 p {
     font-family: $paragraph-font;
     font-size: 16px;
     font-weight: 300;
+    line-height: 1;
+    margin: 16px 0px 0px;
+}
+p:last-of-type {
+    margin: 16px 0px 16px;
+}
+ul {
+    margin-left: 1em;
+
+    & li {
+    font-family: $paragraph-font;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    }
+}
+
+a {
+    color: $blue;
+    text-decoration: underline;
+    font-weight: 400;
+    transition: all 1s ease-in-out;
+}
+a:hover {
+    text-decoration: none;
+}
+a.button {
+    display: block;
+    font-family: $paragraph-font;
+    font-size: 13px;
+    padding: 16px 24px;
+    background: $blue;
+    color: #FFF;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    align-content: flex-end;
 }
