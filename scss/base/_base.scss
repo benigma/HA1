@@ -31,8 +31,12 @@ p {
         margin: 16px 0px 16px;
     }
     &:first-of-type {
-        margin: 0px 0px 16px;
+        margin: 0px 0px 0px;
     }
+
+    & strong {
+        font-weight: 700;
+    } 
 }
 
 ul {
@@ -49,7 +53,7 @@ ul {
 a {
     color: $blue;
     text-decoration: underline;
-    font-weight: 400;
+    font-weight: 700;
     transition: all 1s ease-in-out;
 }
 a:hover {
