@@ -62,8 +62,10 @@ a:hover {
 a.button, input[type="submit"] {
     display: block;
     font-family: $paragraph-font;
+    font-weight: 400;
     font-size: 13px;
-    padding: 16px 24px;
+    margin-top: 12px;
+    padding: 8px 12px;
     background: $blue;
     color: #FFF;
     border: none;

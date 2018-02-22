@@ -293,8 +293,7 @@
         & .story {
             & .feature img {
                 width: 150px;
-                border: 4px solid $light-grey;
-                border-radius: 150px;
+                border: 1px solid $grey;
             }
 
             &:hover {
@@ -962,6 +961,17 @@ footer {
             padding-bottom: 32px;
         }
         & .contact-form {
+            grid-column: 1;
+        }
+    }
+
+    .membership-area {
+        grid-template-columns: 100%;
+
+        & .member-info {
+            grid-column: 1;
+        }
+        & .member-documents {
             grid-column: 1;
         }
     }
