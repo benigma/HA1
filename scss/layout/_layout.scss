@@ -17,24 +17,24 @@
         grid-column: 1/13;
         text-align: center;
 
-        &.home {
+        &.home, &.page-template-default {
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/home-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
         }
-        &.about {
+        &.about, &.page-template-about-template {
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/about-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
         }
-        &.marketing {
+        &.marketing, &.page-template-marketing-template {
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/marketing-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
         }
-        &.crime {
+        &.crime, &.page-template-crime-template {
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/crime-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
             height: 475px;
         }
-        &.operations, &.contact {
+        &.operations, &.contact, &.page-template-operations-template, &.page-template-contact-template {
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/phone-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
         }
@@ -652,7 +652,7 @@ footer {
     border-top: 5px solid #FFF;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 16px;
-    padding: 8px 0px;
+    padding: 24px 0px;
     grid-column: 1/13;
     align-items: center;
 

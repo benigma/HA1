@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php wp_title('|','true','right'); ?><?php bloginfo('name'); ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 
@@ -20,37 +20,34 @@
 </head>
 <body class="home-container">
 
-<header class="home">
+<header <?php body_class(); ?>>
 
 <nav>
 	<div class="logo">
-		<a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/Harrow-BID-White.svg" class="dt-logo" alt="Harrow BID"></a>
-		<a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/HA1.svg" class="mobile-logo" alt="Harrow BID"></a>
+		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/Harrow-BID-White.svg" class="dt-logo" alt="Harrow BID"></a>
+		<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/svg/HA1.svg" class="mobile-logo" alt="Harrow BID"></a>
 	</div>
 
 	<div class="mobile-menu-icon"></div>
 
-		<ul id="menu-primary-menu">
-			<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="about.html">About Us</a>
-			</li>
-			<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58"><a href="marketing.html">Marketing</a>
-			</li>
-			<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="crime.html">Crime Partnership</a></li>
-			<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="operations.html">Operations &amp; Services</a></li>
-			<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="news.html">News</a></li>
-			<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="contact.html">Contact</a></li>
-		</ul>
-
-		<ul id="mobile-primary-menu" class="mobile-menu">
-			<div class="close-btn"></div>
-			<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="about.html">About Us</a>
-			</li>
-			<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58"><a href="marketing.html">Marketing</a>
-			</li>
-			<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="crime.html">Crime Partnership</a></li>
-			<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="operations.html">Operations &amp; Services</a></li>
-			<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="news.html">News</a></li>
-			<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="contact.html">Contact</a></li>
-		</ul>
+	<?php 
+		$defaults = array(	
+		'container' => false,
+		'menu_id' => 'menu-primary-menu',
+		'depth' => 1
+		);
+								
+		wp_nav_menu( $defaults );
+	?>
+	<?php 
+		$defaults = array(	
+		'container' => false,
+		'menu_id' => 'mobile-primary-menu',
+		'menu_class' => 'mobile-menu',
+		'depth' => 1
+		);
+							
+		wp_nav_menu( $defaults );
+	?>
 		
 	</nav>

@@ -96,20 +96,20 @@ input[type="text"], input[type="email"], textarea {
     max-height: 600px;
     grid-column: 1/13;
     text-align: center; }
-    .home-container header.home {
+    .home-container header.home, .home-container header.page-template-default {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/home-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
-    .home-container header.about {
+    .home-container header.about, .home-container header.page-template-about-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/about-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
-    .home-container header.marketing {
+    .home-container header.marketing, .home-container header.page-template-marketing-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/marketing-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
-    .home-container header.crime {
+    .home-container header.crime, .home-container header.page-template-crime-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/crime-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover;
       height: 475px; }
-    .home-container header.operations, .home-container header.contact {
+    .home-container header.operations, .home-container header.contact, .home-container header.page-template-operations-template, .home-container header.page-template-contact-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/phone-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
     .home-container header.news {
@@ -532,7 +532,7 @@ footer {
   border-top: 5px solid #FFF;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 16px;
-  padding: 8px 0px;
+  padding: 24px 0px;
   grid-column: 1/13;
   align-items: center; }
   footer p {
