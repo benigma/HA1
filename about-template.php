@@ -5,56 +5,50 @@ Template Name: About Template
 ?>
 <?php get_header(); ?>
 
-<div class="row">
-	<div class="col-md-12">
-		<?php echo the_field('about_introduction'); ?>
-	</div>
+<?php echo the_field('page_header_introduction'); ?>
+</header>
+
+<div class="story-intro">
+    <?php echo the_field('about_introduction'); ?>
 </div>
 
-<section class="grey">
-<div class="row">
-	<div class="col-md-12 wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">
-		<a name="the-team"></a>
-		
-		<?php echo the_field('the_team_introduction'); ?>
-		
-		<ul class="the-team">
+<div class="team">
+    <div class="staff-profiles">
+        <div class="staff-intro">
+            <?php echo the_field('the_team_introduction'); ?>
+		</div>
 		<?php if( have_rows('the_team') ): ?>
-			<?php while( have_rows('the_team') ): the_row(); ?>
-			<li>
-				<img src="<?php the_sub_field('staff_image'); ?>" />
-				<?php the_sub_field('staff_copy'); ?>
-			</li>
-			<?php endwhile; endif; ?>
-		</ul>
+ 			<?php while( have_rows('the_team') ): the_row(); ?>
+				<div class="staff">
+					<div class="profile"><img src="<?php echo the_sub_field('staff_image'); ?>" /></div>
+					<div class="role">
+						<?php the_sub_field('staff_copy'); ?>
+					</div>
+				</div>
+		<?php endwhile; endif; ?>
+
 	</div>
 </div>
-</section>
 
-<?php if( have_rows('additional_about_sections') ): ?>
-	<?php while( have_rows('additional_about_sections') ): the_row(); ?>
-	
-		<?php if (get_sub_field('additional_about_section_layout') == 'one') { ?>
-		
-			<div class="row wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">
-				<div class="col-md-12">
-					<a name="<?php the_sub_field('additional_about_section_anchor'); ?>"></a>
-					<?php echo the_sub_field('two_columns_introduction'); ?>
-				</div>
-				<div class="col-md-6"><?php echo the_sub_field('two_columns_column_1'); ?></div>
-				<div class="col-md-6"><?php echo the_sub_field('two_columns_column_2'); ?></div>
+<div class="story-container about">
+    
+	<?php if( have_rows('about_sections') ): ?>
+		<?php while( have_rows('about_sections') ): the_row(); ?>    
+
+			<div class="story">
+				<article>
+					<?php the_sub_field('about_section_information'); ?>
+				</article>
 			</div>
 		
-		<?php } elseif (get_sub_field('additional_about_section_layout') == 'two') { ?>
-		
-			<div class="row wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">
-				<a name="<?php the_sub_field('additional_about_section_anchor'); ?>"></a>
-				<div class="col-md-6"><img src="<?php echo the_sub_field('additional_about_section_image'); ?>" /></div>
-				<div class="col-md-6"><?php echo the_sub_field('additional_about_section_copy'); ?></div>
-			</div>
-		
-	<?php } else { } ?> 
-	
-<?php endwhile; endif; ?>
+	<?php endwhile; endif; ?>
+
+</div>
+
+<div class="bid-map">
+    <div class="map-overlay" onClick="style.pointerEvents='none'"></div>
+    <iframe width='100%' height='100%' frameBorder='0' src='https://a.tiles.mapbox.com/v4/benigma.oba9e1dp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYmVuaWdtYSIsImEiOiJlZjg4YmJiNmMyYTlkMjQ0MzlmYTA1YjYwYTRmN2NiYiJ9.nz1A1vJJVSXY5GgKNqQrTw'></iframe>
+
+    </div>
 
 <?php get_footer(); ?>
