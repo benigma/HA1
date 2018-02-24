@@ -16,6 +16,7 @@
             
                 $('.mobile-menu-icon').click( function () {
                     $(".mobile-menu").toggleClass("is-open");
+                    $(this).toggleClass("selected");
                     $('body').toggleClass("no-scroll");
                 } );
                 
