@@ -80,7 +80,7 @@ input[type="text"], input[type="email"], textarea {
   font-weight: 400; }
 
 .no-scroll {
-  overflow-y: hidden; }
+  overflow: hidden; }
 
 .home-container {
   width: 100%;
@@ -623,8 +623,7 @@ footer {
       justify-content: center;
       align-items: center;
       background: #0055a5;
-      position: absolute;
-      overflow-y: unset; }
+      position: absolute; }
       .home-container header nav ul#mobile-primary-menu.mobile-menu {
         top: calc(-100vh - 32px); }
         .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open {
@@ -634,16 +633,6 @@ footer {
           width: 100vw;
           position: fixed;
           overflow: hidden; }
-          .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open .close-btn {
-            width: 24px;
-            height: 24px;
-            background: url("../img/svg/002-close.svg") no-repeat center;
-            -webkit-filter: invert(100%);
-            position: absolute;
-            top: 90px;
-            right: 40px; }
-            .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open .close-btn:hover {
-              cursor: pointer; }
           .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open li {
             list-style: none;
             padding: 8px 0px;

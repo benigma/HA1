@@ -1,5 +1,5 @@
 .no-scroll {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .home-container {
     width: 100%;
@@ -789,7 +789,6 @@ footer {
                 align-items: center;
                 background: $blue;
                 position: absolute;
-                overflow-y: unset;
 
                 &.mobile-menu {
                     top: calc(-100vh - 32px);
@@ -801,20 +800,6 @@ footer {
                         width: 100vw;
                         position: fixed;
                         overflow: hidden;
-
-                        & .close-btn {
-                            width: 24px;
-                            height: 24px;
-                            background: url('../img/svg/002-close.svg') no-repeat center;
-                            -webkit-filter: invert(100%);
-                            position: absolute;
-                            top: 90px;
-                            right: 40px;
-
-                            &:hover {
-                                cursor: pointer;
-                            }
-                        }
 
                         & li {
                             list-style: none;
