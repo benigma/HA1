@@ -17,6 +17,17 @@ function register_theme_menus () {
 
 add_action( 'init', 'register_theme_menus' );
 
+function wp_get_attachment( $attachment_id ) {
+
+    $attachment = get_post( $attachment_id );
+    return array(
+        'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'title' => $attachment->post_title
+    );
+}
+
 function remove_admin_bar_style_frontend() { 
   echo '<style type="text/css" media="screen">
   html { margin-top: 0px !important; }

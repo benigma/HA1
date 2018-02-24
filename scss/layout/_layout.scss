@@ -41,7 +41,7 @@
             background: url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/phone-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
         }
-        &.news {
+        &.news, &.single {
             background:  url('../img/white-border-bottom.png') bottom left no-repeat, $blue url('../img/news-page-banner.jpg') top center no-repeat;
             background-size: 100%, cover;
             height: 400px;
