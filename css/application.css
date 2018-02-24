@@ -79,6 +79,9 @@ input[type="text"], input[type="email"], textarea {
   font-size: 14px;
   font-weight: 400; }
 
+.no-scroll {
+  overflow-y: hidden; }
+
 .home-container {
   width: 100%;
   min-height: 100vh;
@@ -120,7 +123,7 @@ input[type="text"], input[type="email"], textarea {
       height: 475px; }
     .home-container header h1 {
       color: #FFF;
-      width: 75%;
+      width: 80%;
       margin: 8px auto; }
     .home-container header p {
       color: #FFF;
@@ -565,14 +568,18 @@ footer {
     top: -100vh; }
   to {
     top: -32px; } }
+/* iPad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .home-container header nav ul#menu-primary-menu li a {
+    font-size: 12px; } }
 /* iPhone 6 */
-@media only screen and (max-width: 799px) {
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px), (min-width: 375px) and (max-width: 667px) {
   .home-container header {
     max-height: 450px; }
     .home-container header.news {
       height: 300px; }
     .home-container header h1 {
-      font-size: 24px;
+      font-size: 22px;
       line-height: 1;
       margin-top: 32px; }
     .home-container header p {
@@ -605,7 +612,8 @@ footer {
     .home-container header nav ul#menu-primary-menu {
       display: none; }
     .home-container header nav .mobile-menu-icon {
-      display: block; }
+      display: block;
+      z-index: 5000; }
     .home-container header nav ul#mobile-primary-menu {
       display: flex;
       flex-direction: column;
@@ -616,7 +624,7 @@ footer {
       align-items: center;
       background: #0055a5;
       position: absolute;
-      overflow: hidden; }
+      overflow-y: unset; }
       .home-container header nav ul#mobile-primary-menu.mobile-menu {
         top: calc(-100vh - 32px); }
         .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open {
@@ -624,7 +632,8 @@ footer {
           margin-left: 0px;
           animation: menu 0.375s ease-in forwards;
           width: 100vw;
-          position: fixed; }
+          position: fixed;
+          overflow: hidden; }
           .home-container header nav ul#mobile-primary-menu.mobile-menu.is-open .close-btn {
             width: 24px;
             height: 24px;

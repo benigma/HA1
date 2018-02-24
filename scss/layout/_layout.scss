@@ -1,3 +1,6 @@
+.no-scroll {
+    overflow-y: hidden;
+}
 .home-container {
     width: 100%;
     min-height: 100vh;
@@ -49,7 +52,7 @@
 
         & h1 {
             color: #FFF;
-            width: 75%;
+            width: 80%;
             margin: 8px auto;
         }
         & p {
@@ -703,8 +706,15 @@ footer {
     }
 }
 
+/* iPad */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .home-container header nav ul#menu-primary-menu li a {
+        font-size: 12px;
+    }
+}
+
 /* iPhone 6 */
-@media only screen and (max-width: 799px) {
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px), (min-width : 375px) and (max-width : 667px) {
 
     .home-container {
 
@@ -716,7 +726,7 @@ footer {
                 height: 300px;
             }
             & h1 {
-                font-size: 24px;
+                font-size: 22px;
                 line-height: 1;
                 margin-top: 32px;
             }
@@ -766,6 +776,7 @@ footer {
 
             & nav .mobile-menu-icon {
                 display: block;
+                z-index: 5000;
             }
 
             & nav ul#mobile-primary-menu {
@@ -778,7 +789,7 @@ footer {
                 align-items: center;
                 background: $blue;
                 position: absolute;
-                overflow: hidden;
+                overflow-y: unset;
 
                 &.mobile-menu {
                     top: calc(-100vh - 32px);
@@ -789,6 +800,7 @@ footer {
                         animation: menu 0.375s ease-in forwards;
                         width: 100vw;
                         position: fixed;
+                        overflow: hidden;
 
                         & .close-btn {
                             width: 24px;

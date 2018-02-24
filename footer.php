@@ -16,10 +16,8 @@
             
                 $('.mobile-menu-icon').click( function () {
                     $(".mobile-menu").toggleClass("is-open");
+                    $('body').toggleClass("no-scroll");
                 } );
-                $(".close-btn").click(function(){
-                        $(".mobile-menu").removeClass("is-open");
-                });
                 
             });
 		</script>
