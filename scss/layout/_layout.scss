@@ -166,6 +166,7 @@
     grid-column: 1/13;
     background: rgba(0,0,0,0.05);
     padding: 32px 0px;
+    margin: 0px 0px 32px;
 
     display: grid;
     grid-template-columns: 1fr repeat(10, 1fr) 1fr;
@@ -248,7 +249,7 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-gap: 0px;
-    padding: 32px 0px;
+    padding: 0px 0px 32px;
 
     &.operations {
         display: flex;
@@ -356,6 +357,12 @@
                 & a {
                     color: $blue;
                     text-decoration: none;
+                    font-size: 17px;
+                    transition: color 0.5s linear;
+
+                    &:hover {
+                        color: $light-blue;
+                    }
                 }
             }
             & p {
@@ -714,6 +721,18 @@ footer {
     }
 }
 
+/* 1100px */
+
+@media only screen and (min-width : 668px) and (max-width : 1100px) {
+    
+    .home-container header nav ul#menu-primary-menu li {
+        margin: 0 8px;
+    }
+    .home-container header nav ul#menu-primary-menu li a {
+        font-size: 12px;
+    }
+}
+
 /* iPad */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     .home-container header nav ul#menu-primary-menu li a {
@@ -722,7 +741,7 @@ footer {
 }
 
 /* iPhone 6 */
-@media only screen and (min-device-width : 375px) and (max-device-width : 667px), (min-width : 375px) and (max-width : 667px) {
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px), (min-width : 375px) and (max-width : 867px) {
 
     .home-container {
 

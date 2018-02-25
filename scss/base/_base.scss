@@ -54,10 +54,11 @@ a {
     color: $blue;
     text-decoration: underline;
     font-weight: 700;
-    transition: all 1s ease-in-out;
+    transition: color 0.5s linear;
 }
 a:hover {
     text-decoration: none;
+    color: $light-blue;
 }
 a.button, input[type="submit"] {
     display: block;
