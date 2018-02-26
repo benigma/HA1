@@ -12,7 +12,7 @@
 	<?php if( have_rows('service_sections') ): ?>
  		<?php while( have_rows('service_sections') ): the_row(); ?>
 			<div class="story">
-				<div class="feature"></div>
+				<div class="feature"><img src="<?php the_sub_field('service_image'); ?>" /></div>
 				<article>
 					<?php the_sub_field('service_copy'); ?>
 				</article>
