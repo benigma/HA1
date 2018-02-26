@@ -423,8 +423,14 @@ input[type="text"], input[type="email"], textarea {
         font-size: 12px;
         line-height: 1.5;
         margin: 16px 0px; }
+        .news-stories .sub-stories .sub-story article p.date {
+          color: red;
+          font-size: 12px;
+          font-weight: 400;
+          text-transform: uppercase; }
       .news-stories .sub-stories .sub-story img {
         width: 100%;
+        height: auto;
         display: block;
         border: 5px solid #0055a5; }
 
@@ -475,6 +481,11 @@ input[type="text"], input[type="email"], textarea {
       font-size: 12px;
       line-height: 1.5;
       margin: 16px 0px; }
+      .other-stories .sub-stories .sub-story article p.date {
+        color: red;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase; }
 
 .contact-options {
   grid-column: 2/12;
@@ -588,7 +599,7 @@ footer {
   .home-container header nav ul#menu-primary-menu li a {
     font-size: 12px; } }
 /* iPad */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (min-device-pixel-ratio: 2) {
   .home-container header nav ul#menu-primary-menu li a {
     font-size: 12px; } }
 /* iPhone 6 */
