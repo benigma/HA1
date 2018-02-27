@@ -14,9 +14,10 @@ Template Name: Operations Template
 
 <div class="story-container operations">
     <?php if( have_rows('operation_items') ): ?>
- 	<?php while( have_rows('operation_items') ): the_row(); ?>
+     <?php while( have_rows('operation_items') ): the_row();
+     $image = get_sub_field('operation_image'); ?>
         <div class="story">
-            <div class="feature"><img src="<?php the_sub_field('operation_image'); ?>" /></div>
+            <div class="feature"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
             <article>
                 <?php the_sub_field('operation_copy'); ?>
             </article>

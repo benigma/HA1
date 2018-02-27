@@ -18,9 +18,10 @@ Template Name: About Template
             <?php echo the_field('the_team_introduction'); ?>
 		</div>
 		<?php if( have_rows('the_team') ): ?>
- 			<?php while( have_rows('the_team') ): the_row(); ?>
+			 <?php while( have_rows('the_team') ): the_row(); 
+			 $image = get_sub_field('staff_image'); ?>
 				<div class="staff">
-					<div class="profile"><img src="<?php echo the_sub_field('staff_image'); ?>" /></div>
+					<div class="profile"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
 					<div class="role">
 						<?php the_sub_field('staff_copy'); ?>
 					</div>

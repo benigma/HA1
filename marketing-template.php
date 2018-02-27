@@ -15,11 +15,12 @@ Template Name: Marketing Template
 <div class="story-container marketing">
 
 	<?php if( have_rows('marketing_sections') ): ?>
- 		<?php while( have_rows('marketing_sections') ): the_row(); ?>
+         <?php while( have_rows('marketing_sections') ): the_row();
+         $image = get_sub_field('marketing_section_image'); ?>
 
         <div class="story">
             <div class="feature">
-                <img src="<?php the_sub_field('marketing_section_image'); ?>" />
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
             </div>
             <article>
                 <?php the_sub_field('marketing_section_copy'); ?>

@@ -116,10 +116,10 @@ input[type="text"], input[type="email"], textarea {
     .home-container header.operations, .home-container header.contact, .home-container header.page-template-operations-template, .home-container header.page-template-contact-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/phone-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
-    .home-container header.news, .home-container header.single, .home-container header.page-template-news-template {
+    .home-container header.news, .home-container header.single, .home-container header.page-template-news-template, .home-container header.page-template-gallery-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/news-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover;
-      height: 400px; }
+      height: 475px; }
     .home-container header.page-id-40 {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/about-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover;
@@ -589,6 +589,24 @@ input[type="text"], input[type="email"], textarea {
     text-decoration: none;
     color: #FFF; }
 
+.gallery-area {
+  padding: 32px 0px;
+  grid-column: 2/12;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 32px; }
+  .gallery-area div {
+    text-align: center; }
+    .gallery-area div a img {
+      width: 100%;
+      max-width: max-content;
+      height: auto;
+      vertical-align: middle;
+      border: 2px solid #cccccc;
+      transition: border 0.25s ease; }
+      .gallery-area div a img:hover {
+        border: 2px solid #6a6a6a; }
+
 .attachment {
   grid-column: 2/12;
   padding: 32px 0px;
@@ -596,6 +614,7 @@ input[type="text"], input[type="email"], textarea {
   .attachment img {
     border: 5px solid #cccccc;
     width: 100%;
+    max-width: max-content;
     height: auto; }
   .attachment .nav-links {
     width: 50%;
@@ -881,6 +900,9 @@ footer {
       font-size: 13px;
       line-height: 1.5;
       text-align: center; }
+
+  .gallery-area {
+    grid-template-columns: 1fr 1fr; }
 
   .attachment .nav-links {
     width: 100%; }
