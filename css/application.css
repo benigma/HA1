@@ -303,7 +303,8 @@ input[type="text"], input[type="email"], textarea {
   .story-container.marketing {
     grid-template-columns: repeat(3, 1fr); }
     .story-container.marketing .story .feature img {
-      width: 100px;
+      width: 200px;
+      height: auto;
       border: 1px solid #6a6a6a; }
     .story-container.marketing .story:hover > .feature img {
       animation: none; }
