@@ -10,4 +10,12 @@
 	<?php endif; ?>
 </div>
 
+<style>
+	@media only screen and (min-device-width : 375px) and (max-device-width : 667px), (min-width : 335px) and (max-width : 867px) {
+		#gallery-1 .gallery-item {
+			width: 50%;
+		}
+	}
+</style>
+
 <?php get_footer(); ?>

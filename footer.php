@@ -12,17 +12,19 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-            $(document).ready(function(){
+        $(document).ready(function(){
             
-                $('.mobile-menu-icon').click( function () {
-                    $(".mobile-menu").toggleClass("is-open");
-                    $(this).toggleClass("selected");
-                    $('body').toggleClass("no-scroll");
-                } );
-                
+            $('.mobile-menu-icon').click( function () {
+                $("#mobile-primary-menu").addClass("is-open");
+            } );
+            $(".close-btn").click(function(){
+                $("#mobile-primary-menu").removeClass("is-open");
             });
-		</script>
+                
+        });
+    </script>
 		
-	<?php wp_footer(); ?>
+<?php wp_footer(); ?>
+
 </body>
 </html>

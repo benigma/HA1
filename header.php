@@ -39,15 +39,17 @@
 								
 		wp_nav_menu( $defaults );
 	?>
-	<?php 
-		$defaults = array(	
-		'container' => false,
-		'menu_id' => 'mobile-primary-menu',
-		'menu_class' => 'mobile-menu',
-		'depth' => 1
-		);
-							
-		wp_nav_menu( $defaults );
-	?>
-		
+	<div id="mobile-primary-menu">
+		<div class="close-btn"></div>
+			<?php 
+				$defaults = array(	
+				'container' => false,
+				'menu_id' => '',
+				'menu_class' => 'mobile-menu-test',
+				'depth' => 1
+				);
+									
+				wp_nav_menu( $defaults );
+			?>
+	</div>
 	</nav>

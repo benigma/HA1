@@ -89,6 +89,7 @@
                     width: auto;
                     max-width: 200px;
                     height: auto;
+                    border: none;
                 }
 
                 & .mobile-logo {
@@ -522,7 +523,7 @@
             & img {
                 width: 100%;
                 height: auto;
-                display: block;
+                vertical-align: middle;
                 border: 5px solid $blue;
             }
         }
@@ -586,7 +587,7 @@
                 width: 100%;
                 height: auto;
                 border: 5px solid $blue;
-                display: block;
+                vertical-align: middle;
             }
             & article p {
                 font-size: 12px;
@@ -725,6 +726,48 @@
     }
 }
 
+.attachment {
+    grid-column: 2/12;
+    padding: 32px 0px;
+    text-align: center;
+
+    & img {
+        border: 5px solid $light-grey;
+        width: 100%;
+        height: auto;
+    }
+
+    & .nav-links {
+        width: 50%;
+        margin: 0 auto;
+        padding: 32px 0px;
+        display: flex;
+        flex-direction: row;
+        font-family: $paragraph-font;
+        
+        & a {
+            color: #FFF;
+            text-decoration: none;
+            animation: none;
+        }
+
+        & .previous-image, & .next-image {
+            flex: 1;
+            padding: 8px;
+            background: $blue;            
+        }
+        & .return {
+            flex: 5;
+            color: $blue;
+
+            & a {
+                color: $blue;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 footer {
     width: 100%;
     max-height: 100px;
@@ -780,7 +823,15 @@ footer {
         top: -100vh;
     }
     to {
-        top: -32px;
+        top: 0px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
@@ -870,57 +921,56 @@ footer {
 
             & nav .mobile-menu-icon {
                 display: block;
-                z-index: 5000;
             }
+        }
+    }
 
-            & nav ul#mobile-primary-menu {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                width: auto;
-                height: 100vh;
-                justify-content: center;
-                align-items: center;
-                background: $blue;
-                position: absolute;
-                overflow-y: unset;
+    #mobile-primary-menu {
+        grid-column: 1/13;
+        top: 0px;
+        left: 0px;
+        position: fixed;
 
-                &.mobile-menu {
-                    top: calc(-100vh - 32px);
+        & .close-btn {
+            width: 24px;
+            height: 24px;
+            background: url('../img/svg/002-close.svg') no-repeat center;
+            -webkit-filter: invert(100%);
+            position: absolute;
+            top: 32px;
+            right: 32px;
 
-                    &.is-open {
-                        grid-column: 1/13;
-                        margin-left: 0px;
-                        animation: menu 0.375s ease-in forwards;
-                        width: 100vw;
-                        position: fixed;
-                        overflow: hidden;
+            &:hover {
+                cursor: pointer;
+            }
+        }
 
-                        & .close-btn {
-                            width: 24px;
-                            height: 24px;
-                            background: url('../img/svg/002-close.svg') no-repeat center;
-                            -webkit-filter: invert(100%);
-                            position: absolute;
-                            top: 90px;
-                            right: 40px;
+        &.is-open {
+            display: flex !important;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+            background: $blue;
+            animation: menu 0.125s ease-in 0s forwards;
 
-                            
-                        }
+            & ul {
+                margin: 0px;
+                opacity: 0;
+                animation: fadeIn 0.25s ease-in 0.25s forwards;
+                
+                & li {
+                padding: 16px 0px;
+                margin: 0px;
+                list-style: none;
 
-                        & li {
-                            list-style: none;
-                            padding: 8px 0px;
-                            width: 100%;
-        
-                            & a {
-                                font-family: $paragraph-font;
-                                font-size: 15px;
-                                color: #FFF;
-                                text-decoration: none;
-                                text-transform: uppercase;
-                            }
-                        }
+                    a {
+                    text-align: center;
+                    color: #FFF;
+                    text-decoration: none;
+                    text-transform: uppercase;
                     }
                 }
             }
@@ -1123,6 +1173,10 @@ footer {
             line-height: 1.5;
             text-align: center;
         }
+    }
+
+    .attachment .nav-links {
+        width: 100%;
     }
 
     footer {
