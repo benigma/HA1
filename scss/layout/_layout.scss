@@ -1025,7 +1025,7 @@ footer {
         }
     }
     .story-intro {
-        padding: 16px 0px 0px;
+        padding: 16px 0px 32px;
 
         & p {
             font-size: 14px;
@@ -1042,6 +1042,12 @@ footer {
                 padding-top: 32px;
             }
         }
+
+        &.marketing {
+            & .story .feature img {
+                width: 100px;
+            }
+        } 
 
         &.operations {
             & .story {

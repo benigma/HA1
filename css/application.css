@@ -793,7 +793,7 @@ footer {
       flex: 5; }
 
   .story-intro {
-    padding: 16px 0px 0px; }
+    padding: 16px 0px 32px; }
     .story-intro p {
       font-size: 14px;
       width: 80%; }
@@ -802,6 +802,8 @@ footer {
     grid-column: 1/13; }
   .story-container.about .story:last-of-type {
     padding-top: 32px; }
+  .story-container.marketing .story .feature img {
+    width: 100px; }
   .story-container.operations .story {
     width: 100%; }
     .story-container.operations .story:nth-child(4) {
