@@ -22,6 +22,15 @@ h3 {
   font-weight: 300;
   text-transform: uppercase; }
 
+h5 {
+  font-family: "Rockwell W01", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  font-size: 16px;
+  color: #6a6a6a;
+  line-height: 1;
+  margin: 0px 0px 16px;
+  font-weight: 300;
+  text-transform: uppercase; }
+
 p {
   font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
   font-size: 16px;
@@ -264,6 +273,23 @@ input[type="text"], input[type="email"], textarea {
         font-size: 11px;
         line-height: 1.375;
         margin: 8px 0px 0px; }
+
+.bid-objectives {
+  grid-column: 2/12;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 32px;
+  padding-bottom: 32px; }
+  .bid-objectives .objective {
+    grid-column: auto;
+    text-align: center;
+    padding: 0px 32px 0px 0px;
+    border-right: 1px dashed #cccccc; }
+    .bid-objectives .objective:last-child {
+      border-right: none; }
+    .bid-objectives .objective p {
+      font-size: 13px;
+      line-height: 1; }
 
 .story-container {
   grid-column: 2/12;
@@ -793,10 +819,29 @@ footer {
       flex: 5; }
 
   .story-intro {
-    padding: 16px 0px 32px; }
+    padding: 16px 0px; }
     .story-intro p {
       font-size: 14px;
       width: 80%; }
+
+  .bid-objectives {
+    grid-column: 2/12;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 16px;
+    padding-bottom: 32px; }
+    .bid-objectives .objective {
+      grid-column: auto;
+      text-align: center;
+      padding: 16px 0px;
+      border-right: none;
+      border-bottom: 1px dashed #cccccc; }
+      .bid-objectives .objective:last-child {
+        border-right: none;
+        border-bottom: none; }
+      .bid-objectives .objective p {
+        font-size: 13px;
+        line-height: 1; }
 
   .story-container.about .story:nth-child(even) {
     grid-column: 1/13; }

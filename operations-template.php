@@ -12,6 +12,17 @@ Template Name: Operations Template
         <?php echo the_field('operations_intro'); ?>
 </div>
 
+<div class="bid-objectives">
+    <?php if( have_rows('operations_objectives') ): ?>
+    <?php while( have_rows('operations_objectives') ): the_row(); ?>
+
+        <div class="objective">
+            <?php the_sub_field('objective_copy'); ?>
+        </div>
+        
+	<?php endwhile; endif; ?>
+</div>
+
 <div class="story-container operations">
     <?php if( have_rows('operation_items') ): ?>
      <?php while( have_rows('operation_items') ): the_row();

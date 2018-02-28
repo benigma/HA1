@@ -20,6 +20,15 @@ h3 {
     font-weight: 300;
     text-transform: uppercase;
 }
+h5 {
+    font-family: $heading-font;
+    font-size: 16px;
+    color: $grey;
+    line-height: 1;
+    margin: 0px 0px 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 p {
     font-family: $paragraph-font;
     font-size: 16px;
