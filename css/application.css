@@ -640,7 +640,7 @@ input[type="text"], input[type="email"], textarea {
   .attachment img {
     border: 5px solid #cccccc;
     width: 100%;
-    max-width: max-content;
+    max-width: 640px;
     height: auto; }
   .attachment .nav-links {
     width: 50%;
