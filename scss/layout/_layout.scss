@@ -330,7 +330,7 @@
     }
 
     &.marketing {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
 
         & .story {
             & .feature img {
@@ -345,7 +345,7 @@
                 }
             }
 
-            &:nth-child(3) {
+            &:nth-child(4) {
                 border-right: none;
             }
 
