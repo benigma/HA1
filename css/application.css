@@ -122,7 +122,7 @@ input[type="text"], input[type="email"], textarea {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/crime-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover;
       height: 475px; }
-    .home-container header.operations, .home-container header.contact, .home-container header.page-template-operations-template, .home-container header.page-template-contact-template {
+    .home-container header.operations, .home-container header.contact, .home-container header.page-template-operations-template, .home-container header.page-template-contact-template, .home-container header.page-template-members-template {
       background: url("../img/white-border-bottom.png") bottom left no-repeat, #0055a5 url("../img/phone-page-banner.jpg") top center no-repeat;
       background-size: 100%, cover; }
     .home-container header.news, .home-container header.single, .home-container header.page-template-news-template, .home-container header.page-template-gallery-template {
@@ -186,7 +186,7 @@ input[type="text"], input[type="email"], textarea {
         .home-container header nav ul#menu-primary-menu li a {
           color: #FFF;
           font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: normal;
           text-transform: uppercase;
           text-decoration: none;

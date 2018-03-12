@@ -75,6 +75,32 @@ function pagination($pages = '', $range = 4) {
      }
 }
 
+// Harrow Login Logo
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/img/site-login-logo.png');
+		    height:96px;
+		    width:250px;
+		    background-size: 250px 96px;
+		    background-repeat: no-repeat;
+        	padding-bottom: 8px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Harrow Business Improvement District';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+// Footer Info
 function change_footer_admin () {
   echo 'Harrow - Business Improvement District';
 }  
