@@ -327,14 +327,15 @@ input[type="text"], input[type="email"], textarea {
       .story-container.about .story:hover > .feature img {
         animation: none; }
   .story-container.marketing {
-    grid-template-columns: repeat(4, 1fr); }
+    display: flex;
+    flex-direction: row; }
     .story-container.marketing .story .feature img {
       width: 200px;
       height: auto;
       border: 1px solid #6a6a6a; }
     .story-container.marketing .story:hover > .feature img {
       animation: none; }
-    .story-container.marketing .story:nth-child(4) {
+    .story-container.marketing .story:last-child {
       border-right: none; }
   .story-container .story {
     text-align: center;
@@ -847,8 +848,10 @@ footer {
     grid-column: 1/13; }
   .story-container.about .story:last-of-type {
     padding-top: 32px; }
-  .story-container.marketing .story .feature img {
-    width: 100px; }
+  .story-container.marketing {
+    flex-direction: column; }
+    .story-container.marketing .story .feature img {
+      width: 100px; }
   .story-container.operations .story {
     width: 100%; }
     .story-container.operations .story:nth-child(4) {
