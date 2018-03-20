@@ -1,52 +1,25 @@
-<?php get_header('home'); ?>
+<?php get_header(); ?>
 
-<div class="row">
+		<?php echo the_field('header_introduction'); ?>
+</header>
 
-	<div class="col-md-12">
-	
-	<?php echo the_field('ha1_about_introduction'); ?>
-	
-	</div>
-
+<div class="story-intro">
+	<?php echo the_field('ha1_introduction'); ?>
 </div>
 
-<section class="bid-numbers">
- <div class="row wow fadeIn" data-wow-duration="4s">
- 	<div class="col-md-12">
- 		<h2>Harrow BID by numbers</h2>
- 		<ul class="bid-statistics">
- 		
- 			<?php if( have_rows('ha1_numbers') ): ?>
- 				<?php while( have_rows('ha1_numbers') ): the_row(); ?>
- 		
-		 			<li>
-		 				<img src="<?php the_sub_field('figure_image'); ?>" />
-		 				<p class="statistic"><strong><?php the_sub_field('figure_number'); ?></strong></p>
-		 				<p><?php the_sub_field('figure_copy'); ?></p>
-		 			</li>
- 			
- 			<?php endwhile; endif; ?>
- 			
- 		</ul>
- 	</div>
- </div>
-</section>
-
-<?php if( have_rows('additional_sections') ): ?>
-	<?php while( have_rows('additional_sections') ): the_row(); ?>
-		
-		<div class="row wow fadeIn">
-		
-			<div class="col-md-4">
-				<img src="<?php the_sub_field('additional_section_image'); ?>"/>
+<div class="story-container">
+	
+	<?php if( have_rows('service_sections') ): ?>
+ 		<?php while( have_rows('service_sections') ): the_row(); ?>
+			<div class="story">
+				<div class="feature"><img src="<?php the_sub_field('service_image'); ?>" /></div>
+				<article>
+					<?php the_sub_field('service_copy'); ?>
+				</article>
 			</div>
-			<div class="col-md-8">
-					<?php the_sub_field('additional_section_copy'); ?>
-			</div>
-			
-		</div>
-
-<?php endwhile; endif; ?>
+	<?php endwhile; endif; ?>
+	
+</div>
 
 
 <?php get_footer(); ?>
